@@ -1,25 +1,21 @@
-#ifndef _MONTY_H_
-#define _MONTY_H_
+#ifndef MONTY_H
+#define MONTY_H
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include <unistd.h>
+#include <limits.h>
+#include <string.h>
+#include <ctype.h>
 
-/**
- * struct stack_s - doubly linked list representation of a stack (or queue)
- * @n: integer
- * @prev: points to the previous element of the stack (or queue)
- * @next: points to the next element of the stack (or queue)
- *
- * Description: doubly linked list node structure
- * for stack, queues, LIFO, FIFO Holberton project
- */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -32,8 +28,27 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+typedef struct tools_s
+{
+	FILE *file;
+	char *opcode;
+	unsigned int line_number;
+	stack_t *stack;
+	char isStack;
+} tools_t;
+
+extern tools_t tools;
+
+void executeFun(char *opcode, unsigned int line_number);
+void push(char *num);
+void pushInt(int n);
+void checkNum(char *num);
+void cleanmemory(void);
+void pall(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int l);
 
 #endif
