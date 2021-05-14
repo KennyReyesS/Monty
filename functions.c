@@ -45,7 +45,7 @@ void checkNum(char *num)
 void pushInteger(int n)
 {
 	stack_t *new = malloc(sizeof(stack_t));
-	stack_t *tmp = tools.stack;
+	/*stack_t *tmp = tools.stack;*/
 
 	if (!new)
 	{
@@ -64,21 +64,10 @@ void pushInteger(int n)
 	}
 	else
 	{
-		if (tools.isStack)
-		{
-			new->next = tools.stack;
-			new->prev = NULL;
-			tools.stack->prev = new;
-			tools.stack = new;
-		}
-		else
-		{
-			while (tmp->next)
-				tmp = tmp->next;
-			tmp->next = new;
-			new->prev = tmp;
-			new->next = NULL;
-		}
+		new->next = tools.stack;
+		new->prev = NULL;
+		tools.stack->prev = new;
+		tools.stack = new;
 	}
 }
 
