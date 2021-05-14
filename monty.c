@@ -1,7 +1,6 @@
 #include "monty.h"
 
 tools_t tools;
-
 /**
  * main - Monty interpreter
  * Description: executes file scripts with built-in code
@@ -37,7 +36,7 @@ int main(int argc, char **argv)
 		tools.line_number++;
 
 		opcode = strtok(line, " \t\n");
-		if (!opcode || opcode[0] == '#')
+		if (!opcode)
 			continue;
 		if (strcmp(opcode, "push") == 0)
 			push(strtok(NULL, " \t\n"));
