@@ -43,11 +43,16 @@ int main(int argc, char **argv)
 		else
 			executeFun(opcode, tools.line_number);
 	}
-	
 	free(line);
 	cleanmemory();
 	return (EXIT_SUCCESS);
 }
+
+/**
+ * executeFun - check in the list if the command exist and execute function
+ * @opcode: string of char.
+ * @line_number: The line number.
+ */
 
 void executeFun(char *opcode, unsigned int line_number)
 {
