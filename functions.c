@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * push - Check if is integer or and execute the function
+ * @num: Integer like char.
+ * Return: 0
+ */
+
 void push(char *num)
 {
 	if (num == NULL)
