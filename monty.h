@@ -45,7 +45,7 @@ extern tools_t tools;
 
 void executeFun(char *opcode, unsigned int line_number);
 void push(char *num);
-void pushInt(int n);
+void pushInteger(int n);
 void checkNum(char *num);
 void cleanmemory(void);
 void pall(stack_t **stack, unsigned int line_number);
