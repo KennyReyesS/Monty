@@ -38,7 +38,6 @@ typedef struct tools_s
 	char *opcode;
 	unsigned int line_number;
 	stack_t *stack;
-	char isStack;
 } tools_t;
 
 extern tools_t tools;
