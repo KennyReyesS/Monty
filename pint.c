@@ -10,7 +10,7 @@ void pint(stack_t **stack, unsigned int line_number)
 {
 	stack_t *h = *stack;
 
-	if (h == NULL)
+	if (!h)
 	{
 		dprintf(STDERR_FILENO, "L%u: can't pint, stack empty\n", line_number);
 		cleanmemory();
