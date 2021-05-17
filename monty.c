@@ -60,6 +60,9 @@ void executeFun(char *opcode, unsigned int line_number)
 
 	instruction_t funcs[] = {
 		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
 		{"nop", nop},
 		{NULL, NULL}
 	};
